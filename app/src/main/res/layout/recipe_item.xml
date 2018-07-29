@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxHeight="145dp">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_zero"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".025" />
+
+    <android.support.constraint.Guideline
+
+        android:id="@+id/guideline_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.975" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_four"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="200dp"
+        android:id="@+id/recipe_cardview"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_four"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_one"
+        app:layout_constraintStart_toStartOf="@+id/guideline_zero"
+        app:layout_constraintTop_toTopOf="@+id/guideline_two">
+
+        <TextView
+            android:id="@+id/id_of_recipe_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>
