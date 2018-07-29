@@ -146,6 +146,7 @@ public class RecipeStepsFragmentTwo extends Fragment {
         }
     }
 
+        //Test Comment
     private void initializePlayer(){
         // Create a default TrackSelector
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
@@ -154,6 +155,7 @@ public class RecipeStepsFragmentTwo extends Fragment {
         TrackSelector trackSelector =
                 new DefaultTrackSelector(videoTrackSelectionFactory);
 
+        String s = "TEST";
         //Initialize the player
         mExoPlayer = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector);
         mSimpleExoPlayer.setPlayer(mExoPlayer);

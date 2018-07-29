@@ -10,13 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61203eeb-92a4-4edc-9127-3446dc214c6e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/RecipeStepsFragmentTwo.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentTwo.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IndividualRecipeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IndividualRecipeActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_steps_fragment_two.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_two.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recipe_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_one.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentTwo.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentTwo.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,8 +82,8 @@
       <file leaf-file-name="RecipeStepsFragmentTwo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -3283,8 +3277,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
           <folding />
         </state>
       </provider>
