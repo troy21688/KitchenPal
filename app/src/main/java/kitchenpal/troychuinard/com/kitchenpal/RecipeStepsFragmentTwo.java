@@ -29,6 +29,8 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
+import java.util.List;
+
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 
 /**
@@ -68,11 +70,11 @@ public class RecipeStepsFragmentTwo extends Fragment {
      * @return A new instance of fragment RecipeStepsFragmentTwo.
      */
     // TODO: Rename and change types and number of parameters
-    public static RecipeStepsFragmentTwo newInstance(Recipe recipe) {
+    public static RecipeStepsFragmentTwo newInstance(List<Recipe> recipeList, int position) {
         RecipeStepsFragmentTwo fragment = new RecipeStepsFragmentTwo();
-        Bundle bundle = new Bundle();
-        bundle.putParcelable(RECIPE, recipe);
-        fragment.setArguments(bundle);
+//        Bundle bundle = new Bundle();
+//        bundle.putParcelable(RECIPE, recipe);
+//        fragment.setArguments(bundle);
         //TODO: Is this the correct way of passing data between the activity and the fragment?
         return fragment;
     }
@@ -155,7 +157,6 @@ public class RecipeStepsFragmentTwo extends Fragment {
         TrackSelector trackSelector =
                 new DefaultTrackSelector(videoTrackSelectionFactory);
 
-        String s = "TEST";
         //Initialize the player
         mExoPlayer = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector);
         mSimpleExoPlayer.setPlayer(mExoPlayer);

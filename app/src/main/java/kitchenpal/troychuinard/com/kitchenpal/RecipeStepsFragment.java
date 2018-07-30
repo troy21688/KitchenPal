@@ -3,6 +3,7 @@ package kitchenpal.troychuinard.com.kitchenpal;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -11,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 
@@ -35,7 +39,8 @@ public class RecipeStepsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Recipe mRecipe;
+    private List<Recipe> mRecipeList;
+    private int mPosition;
 
     private OnFragmentInteractionListener mListener;
 
@@ -50,10 +55,11 @@ public class RecipeStepsFragment extends Fragment {
      * @return A new instance of fragment RecipeStepsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RecipeStepsFragment newInstance(Recipe recipe) {
+    public static RecipeStepsFragment newInstance(List<Recipe> recipeList, int position) {
         RecipeStepsFragment fragment = new RecipeStepsFragment();
         Bundle bundle = new Bundle();
-        bundle.putParcelable(RECIPE, recipe);
+        bundle.putParcelableArrayList("Recipe_List", (ArrayList<? extends Parcelable>) recipeList);
+        bundle.putInt("Position", position);
         fragment.setArguments(bundle);
 
         //TODO: Is this the correct way of passing data between the activity and the fragment?
@@ -76,11 +82,12 @@ public class RecipeStepsFragment extends Fragment {
         // Inflate the layout for this fragment
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            mRecipe = bundle.getParcelable(RECIPE);
+            mRecipeList = bundle.getParcelableArrayList("Recipe_List");
+            mPosition = bundle.getInt("Position");
         }
 
-        String label = mRecipe.getName();
-        Log.v("NAME", mRecipe.getName());
+        String label = mRecipeList.get(mPosition).getName();
+        Log.v("NAME", mRecipeList.get(mPosition).getName());
         mButton = v.findViewById(R.id.to_recipe_2);
         mLabel = v.findViewById(R.id.label);
         mLabel.setText(label);
@@ -88,7 +95,7 @@ public class RecipeStepsFragment extends Fragment {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipe);
+                RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, mPosition);
                 FragmentManager fm = getFragmentManager();
                 //TODO: Why am I being prompted for V4? Am I handling correctly?
                 android.support.v4.app.FragmentTransaction transaction = fm.beginTransaction();

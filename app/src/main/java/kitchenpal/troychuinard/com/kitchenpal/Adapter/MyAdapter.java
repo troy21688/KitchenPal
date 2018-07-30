@@ -2,6 +2,8 @@ package kitchenpal.troychuinard.com.kitchenpal.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -59,8 +61,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(con, IndividualRecipeActivity.class);
-                    Recipe recipe = mRecipeDataSet.get(position);
-                    i.putExtra("Recipe",recipe);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelableArrayList("Recipe_List", (ArrayList<? extends Parcelable>) mRecipeDataSet);
+                    i.putExtras(bundle);
+                    i.putExtra("Position",position);
                     con.startActivity(i);
                 }
             });
