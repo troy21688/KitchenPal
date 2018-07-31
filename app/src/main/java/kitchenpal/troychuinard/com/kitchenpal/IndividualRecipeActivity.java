@@ -12,7 +12,7 @@ import java.util.List;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 
 
-public class IndividualRecipeActivity extends AppCompatActivity implements RecipeStepsFragment.OnFragmentInteractionListener, RecipeStepsFragmentTwo.OnFragmentInteractionListener {
+public class IndividualRecipeActivity extends AppCompatActivity implements RecipeStepsFragment.OnFragmentInteractionListener, RecipeStepsFragmentTwo.OnFragmentInteractionListener, RecipeStepsFragmentThree.OnFragmentInteractionListener {
 
     private Recipe mRecipe;
     private List<Recipe> mRecipeList;

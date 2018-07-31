@@ -54,7 +54,9 @@ public class RecipeStepsFragment extends Fragment {
      *
      * @return A new instance of fragment RecipeStepsFragment.
      */
-    // TODO: Rename and change types and number of parameters
+    //TODO: Is it correct to pass the complete JSON response to each Fragment? I wasn't able to determine a better way
+    //TODO: of passing the List<Recipes> between each Fragment.
+    //TODO: See https://stackoverflow.com/questions/51583602/access-non-hosting-activity-objects-from-fragment
     public static RecipeStepsFragment newInstance(List<Recipe> recipeList, int position) {
         RecipeStepsFragment fragment = new RecipeStepsFragment();
         Bundle bundle = new Bundle();
@@ -99,7 +101,7 @@ public class RecipeStepsFragment extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 //TODO: Why am I being prompted for V4? Am I handling correctly?
                 android.support.v4.app.FragmentTransaction transaction = fm.beginTransaction();
-                //TODO: Am I handling removal of previous frag correctly?
+                //TODO: Am I handling removal of previous fragment correctly?
                 RecipeStepsFragment recipeStepsFragment = (RecipeStepsFragment) fm.findFragmentById(R.id.recipe_details);
                 transaction.remove(recipeStepsFragment);
                 transaction.replace(R.id.recipe_details_two, recipeStepsFragmentTwo);

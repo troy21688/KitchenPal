@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -54,8 +55,6 @@ public class RecipeStepsFragmentTwo extends Fragment {
     private static final String RECIPE = "RECIPE";
     private Recipe mRecipe;
     private TextView mTextView;
-    private SimpleExoPlayerView mSimpleExoPlayer;
-    private SimpleExoPlayer mExoPlayer;
     private List<Recipe> mRecipeList;
     private int mPosition;
     private List<Ingredients> mIngredients;
@@ -114,19 +113,19 @@ public class RecipeStepsFragmentTwo extends Fragment {
         }
         String label = mRecipeList.get(mPosition).getName();
         mTextView = v.findViewById(R.id.label_two);
-        mSimpleExoPlayer = v.findViewById(R.id.exoplayer);
         mTextView.setText(label);
         mIngredients = mRecipeList.get(mPosition).getIngredients();
         for (Ingredients ingredients : mIngredients){
             Log.v("INGREDIENTS", ingredients.getIngredient());
         }
         mSteps = mRecipeList.get(mPosition).getSteps();
-        mStepsRecyclerView = v.findViewById(R.id.recyclerview_recipe_steps);
+        mStepsRecyclerView = v.findViewById(R.id.recycler_view_recipe_steps);
         LinearLayoutManager lm = new LinearLayoutManager(getContext());
         lm.setOrientation(LinearLayoutManager.VERTICAL);
         mStepsRecyclerView.setLayoutManager(lm);
-        mAdapter = new StepAdapter(getActivity().getApplicationContext());
-        mAdapter.setDataSet(mSteps);
+        FragmentManager fm = getFragmentManager();
+        mAdapter = new StepAdapter(getActivity().getApplicationContext(),fm);
+        mAdapter.setDataSet(mSteps, mRecipeList, mPosition);
         mStepsRecyclerView.setAdapter(mAdapter);
 
 
@@ -158,55 +157,6 @@ public class RecipeStepsFragmentTwo extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        initializePlayer();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mExoPlayer!=null) {
-            mExoPlayer.release();
-            mExoPlayer = null;
-        }
-    }
-
-        //Test Comment
-    private void initializePlayer(){
-        // Create a default TrackSelector
-        BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-        TrackSelection.Factory videoTrackSelectionFactory =
-                new AdaptiveTrackSelection.Factory(bandwidthMeter);
-        TrackSelector trackSelector =
-                new DefaultTrackSelector(videoTrackSelectionFactory);
-
-        //Initialize the player
-        mExoPlayer = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector);
-        mSimpleExoPlayer.setPlayer(mExoPlayer);
-
-
-        // Produces DataSource instances through which media data is loaded.
-        DataSource.Factory dataSourceFactory =
-                new DefaultDataSourceFactory(getContext(), Util.getUserAgent(getContext(), "CloudinaryExoplayer"));
-
-        // Produces Extractor instances for parsing the media data.
-        ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
-
-
-
-        // This is the MediaSource representing the media to be played.
-        Uri videoUri = Uri.parse("https://d17h27t6h515a5.cloudfront.net/topher/2017/April/58ffd974_-intro-creampie/-intro-creampie.mp4");
-        MediaSource videoSource = new ExtractorMediaSource(videoUri,
-                dataSourceFactory, extractorsFactory, null, null);
-
-        // Prepare the player with the source.
-        mExoPlayer.prepare(videoSource);
-    }
-
-
 
 
     /**

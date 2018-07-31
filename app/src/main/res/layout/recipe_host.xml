@@ -7,15 +7,19 @@
     tools:context=".IndividualRecipeActivity">
 
     <FrameLayout
-        android:name="kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragment"
         android:id="@+id/recipe_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </FrameLayout>
 
     <FrameLayout
-        android:name="kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragment"
         android:id="@+id/recipe_details_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/recipe_details_three"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </FrameLayout>

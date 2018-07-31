@@ -2,6 +2,9 @@ package kitchenpal.troychuinard.com.kitchenpal.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,14 +18,21 @@ import java.util.List;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Steps;
 import kitchenpal.troychuinard.com.kitchenpal.R;
+import kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragment;
+import kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragmentThree;
+import kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragmentTwo;
 
 public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
 
     private List<Steps> mStepsDataSet = new ArrayList<Steps>();
+    private List<Recipe> mRecipeList;
     private Context con;
+    private int mRecipePosition;
+    private FragmentManager mFragmanager;
 
-    public StepAdapter(Context context) {
+    public StepAdapter(Context context, FragmentManager fm) {
         this.con = context;
+        this.mFragmanager = fm;
     }
 
     @NonNull
@@ -33,9 +43,22 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         String id = mStepsDataSet.get(position).getId();
         holder.mTextView.setText(id);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RecipeStepsFragmentThree recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, position);
+                //TODO: Why am I being prompted for V4? Am I handling correctly?
+                FragmentTransaction transaction = mFragmanager.beginTransaction();
+                //TODO: Am I handling removal of previous frag correctly?
+                RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
+                transaction.remove(recipeStepsFragmentTwo);
+                transaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
+                transaction.commit();
+            }
+        });
     }
 
     @Override
@@ -55,8 +78,10 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         }
     }
 
-    public void setDataSet(List<Steps> stepsList){
+    public void setDataSet(List<Steps> stepsList, List<Recipe> recipeList, int recipePosition){
         mStepsDataSet = stepsList;
+        mRecipeList = recipeList;
+        mRecipePosition = recipePosition;
     }
 
 
