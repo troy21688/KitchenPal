@@ -50,4 +50,12 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".975"/>
 
+    <android.support.v7.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/exoplayer"
+        android:id="@+id/recyclerview_recipe_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
 </android.support.constraint.ConstraintLayout>

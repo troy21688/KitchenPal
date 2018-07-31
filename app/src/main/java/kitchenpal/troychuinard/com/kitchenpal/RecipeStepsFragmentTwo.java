@@ -3,7 +3,11 @@ package kitchenpal.troychuinard.com.kitchenpal;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +19,6 @@ import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
 import com.google.android.exoplayer2.extractor.ExtractorsFactory;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.source.dash.DashMediaSource;
-import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource;
-import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
@@ -29,9 +30,13 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import kitchenpal.troychuinard.com.kitchenpal.Adapter.StepAdapter;
+import kitchenpal.troychuinard.com.kitchenpal.Model.Ingredients;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
+import kitchenpal.troychuinard.com.kitchenpal.Model.Steps;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,6 +56,12 @@ public class RecipeStepsFragmentTwo extends Fragment {
     private TextView mTextView;
     private SimpleExoPlayerView mSimpleExoPlayer;
     private SimpleExoPlayer mExoPlayer;
+    private List<Recipe> mRecipeList;
+    private int mPosition;
+    private List<Ingredients> mIngredients;
+    private List<Steps> mSteps;
+    private RecyclerView mStepsRecyclerView;
+    private StepAdapter mAdapter;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -72,9 +83,10 @@ public class RecipeStepsFragmentTwo extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static RecipeStepsFragmentTwo newInstance(List<Recipe> recipeList, int position) {
         RecipeStepsFragmentTwo fragment = new RecipeStepsFragmentTwo();
-//        Bundle bundle = new Bundle();
-//        bundle.putParcelable(RECIPE, recipe);
-//        fragment.setArguments(bundle);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("Recipe_List", (ArrayList<? extends Parcelable>) recipeList);
+        bundle.putInt("Position", position);
+        fragment.setArguments(bundle);
         //TODO: Is this the correct way of passing data between the activity and the fragment?
         return fragment;
     }
@@ -97,13 +109,27 @@ public class RecipeStepsFragmentTwo extends Fragment {
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            mRecipe = bundle.getParcelable(RECIPE);
+            mRecipeList = bundle.getParcelableArrayList("Recipe_List");
+            mPosition = bundle.getInt("Position");
         }
-        String label = mRecipe.getServings();
+        String label = mRecipeList.get(mPosition).getName();
         mTextView = v.findViewById(R.id.label_two);
         mSimpleExoPlayer = v.findViewById(R.id.exoplayer);
-
         mTextView.setText(label);
+        mIngredients = mRecipeList.get(mPosition).getIngredients();
+        for (Ingredients ingredients : mIngredients){
+            Log.v("INGREDIENTS", ingredients.getIngredient());
+        }
+        mSteps = mRecipeList.get(mPosition).getSteps();
+        mStepsRecyclerView = v.findViewById(R.id.recyclerview_recipe_steps);
+        LinearLayoutManager lm = new LinearLayoutManager(getContext());
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
+        mStepsRecyclerView.setLayoutManager(lm);
+        mAdapter = new StepAdapter(getActivity().getApplicationContext());
+        mAdapter.setDataSet(mSteps);
+        mStepsRecyclerView.setAdapter(mAdapter);
+
+
 
 
         return v;
