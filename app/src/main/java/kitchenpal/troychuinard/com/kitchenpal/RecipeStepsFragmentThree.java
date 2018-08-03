@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -58,6 +59,7 @@ public class RecipeStepsFragmentThree extends Fragment {
     private int mStepPosition;
     private String mVideoURL;
     private List<Steps> mSteps;
+    private FrameLayout mExoPlayerPlaceholder;
 
     private OnFragmentInteractionListener mListener;
 
@@ -116,6 +118,13 @@ public class RecipeStepsFragmentThree extends Fragment {
         Steps step = mSteps.get(mStepPosition);
         mVideoURL = step.getVideoURL();
         mSimpleExoPlayer = v.findViewById(R.id.exoplayer);
+        mExoPlayerPlaceholder = v.findViewById(R.id.exoplayer_placeholder);
+        if (mVideoURL == null || mVideoURL.isEmpty()){
+            mSimpleExoPlayer.setVisibility(View.GONE);
+            mExoPlayerPlaceholder.setVisibility(View.VISIBLE);
+        }
+
+
         return v;
     }
 
