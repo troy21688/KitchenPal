@@ -148,7 +148,7 @@ public class RecipeStepsFragmentThree extends Fragment {
         //Initialize the player
         mExoPlayer = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector);
         mSimpleExoPlayer.setPlayer(mExoPlayer);
-        
+
 
         // Produces DataSource instances through which media data is loaded.
         DataSource.Factory dataSourceFactory =
