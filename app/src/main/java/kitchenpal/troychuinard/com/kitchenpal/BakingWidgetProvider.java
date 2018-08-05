@@ -1,8 +1,10 @@
 package kitchenpal.troychuinard.com.kitchenpal;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
@@ -17,10 +19,12 @@ public class BakingWidgetProvider extends AppWidgetProvider {
         CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.baking_widget_provider);
-        views.setTextViewText(R.id.appwidget_text, widgetText);
+        Intent intent = new Intent(context, MainActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent, 0);
+        //TODO: Why isn't my widget launching my MainActivity onClick?
+        //TODO: I am trying to add a ListView of ingredients to my Widget but have no idea where to begin
+        views.setOnClickPendingIntent(R.id.chef, pIntent);
 
-        // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 
     @Override

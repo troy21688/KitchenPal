@@ -1,5 +1,7 @@
 package kitchenpal.troychuinard.com.kitchenpal.Adapter;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import kitchenpal.troychuinard.com.kitchenpal.BakingWidgetProvider;
 import kitchenpal.troychuinard.com.kitchenpal.IndividualRecipeActivity;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 import kitchenpal.troychuinard.com.kitchenpal.R;
@@ -57,6 +60,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent intent = new Intent(con, BakingWidgetProvider.class);
+                    intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+                    int[] ids = AppWidgetManager.getInstance(con).getAppWidgetIds(new ComponentName(con, BakingWidgetProvider.class));
+                    if(ids != null && ids.length > 0) {
+                        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+                        con.sendBroadcast(intent);
+                    }
                     Intent i = new Intent(con, IndividualRecipeActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putParcelableArrayList("Recipe_List", (ArrayList<? extends Parcelable>) mRecipeDataSet);
