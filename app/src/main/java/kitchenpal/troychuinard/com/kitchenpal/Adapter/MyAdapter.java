@@ -25,6 +25,7 @@ import kitchenpal.troychuinard.com.kitchenpal.R;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
+    private static final String RECIPE_NAME = "RECIPE_NAME";
     private List<Recipe> mRecipeDataSet = new ArrayList<Recipe>();
     private Context con;
 
@@ -56,6 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, final int position) {
             String id = mRecipeDataSet.get(position).getId();
+            final String recipeName = mRecipeDataSet.get(position).getName();
             holder.mTextView.setText(id);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -65,6 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     int[] ids = AppWidgetManager.getInstance(con).getAppWidgetIds(new ComponentName(con, BakingWidgetProvider.class));
                     if(ids != null && ids.length > 0) {
                         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+                        intent.putExtra(RECIPE_NAME, recipeName);
                         con.sendBroadcast(intent);
                     }
                     Intent i = new Intent(con, IndividualRecipeActivity.class);
