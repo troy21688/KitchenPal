@@ -13,12 +13,16 @@ import android.widget.RemoteViews;
  */
 public class BakingWidgetProvider extends AppWidgetProvider {
 
+    private static final String RECIPE_NAME = "RECIPE_NAME";
+    private static String mRecipeName;
+
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
         CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.baking_widget_provider);
+        views.setTextViewText(R.id.selected_recipe, mRecipeName);
         Intent intent = new Intent(context, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent, 0);
         //TODO: Why isn't my widget launching my MainActivity onClick?
@@ -43,6 +47,12 @@ public class BakingWidgetProvider extends AppWidgetProvider {
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+        mRecipeName = intent.getStringExtra(RECIPE_NAME);
     }
 }
 
