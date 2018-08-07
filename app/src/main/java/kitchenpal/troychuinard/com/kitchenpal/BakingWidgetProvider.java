@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 /**
@@ -22,6 +23,7 @@ public class BakingWidgetProvider extends AppWidgetProvider {
         CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.baking_widget_provider);
+        Log.v("WIDGET", mRecipeName);
         views.setTextViewText(R.id.selected_recipe, mRecipeName);
         Intent intent = new Intent(context, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent, 0);
@@ -51,8 +53,15 @@ public class BakingWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        super.onReceive(context, intent);
-        mRecipeName = intent.getStringExtra(RECIPE_NAME);
+        if(intent.getAction().equals("UPDATE_ACTION")) {
+            mRecipeName = intent.getStringExtra(RECIPE_NAME);
+            int[] appWidgetIds = intent.getExtras().getIntArray(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+            if (appWidgetIds != null && appWidgetIds.length > 0) {
+                this.onUpdate(context, AppWidgetManager.getInstance(context), appWidgetIds);
+            }
+        } else {
+            super.onReceive(context, intent);
+        }
     }
 }
 
