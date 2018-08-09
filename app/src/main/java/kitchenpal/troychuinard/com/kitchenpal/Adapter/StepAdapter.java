@@ -48,17 +48,17 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
             holder.mTextView.setText(R.string.Ingredients);
         } else {
             //TODO: When I tried concatening with a String resource it was not displaying desired text
-            holder.mTextView.setText("Step " + String.valueOf(position - 1));
-
+            holder.mTextView.setText("Step " + String.valueOf(position));
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RecipeStepsFragmentThree recipeStepsFragmentThree;
                 if (position == 0){
-                    RecipeStepsFragmentThree recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position));
+                    recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position));
                 } else {
-                    RecipeStepsFragmentThree recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position));
+                    recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position -1));
                 }
 
                 //TODO: Why am I being prompted for V4? Am I handling correctly?
@@ -74,7 +74,8 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mStepsDataSet.size();
+        //Account for ingredients Card
+        return (mStepsDataSet.size() + 1);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
