@@ -1,10 +1,15 @@
 package kitchenpal.troychuinard.com.kitchenpal;
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Movie;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String BASE_URL = "https://d17h27t6h515a5.cloudfront.net/";
     private List<Recipe> mRecipeListResponse;
     private MyAdapter mAdapter;
+    ConstraintLayout mConstraintLayoutSmall;
 
     //testing
 
@@ -39,9 +45,21 @@ public class MainActivity extends AppCompatActivity {
         //TODO: Unable to set dynamic, material RecyclerView using Constraints; had to set static DP for height of view
         //TODO: See StackOverflow post: https://stackoverflow.com/questions/51529326/constraintlayout-unable-to-wrap-content-and-stack-recyclerview-items?noredirect=1#comment90046855_51539365
         mRecipeList = findViewById(R.id.recycler_view_ingredients);
+        mConstraintLayoutSmall = findViewById(R.id.small_layout);
+        int spanCount = calculateNoOfColumns(getApplicationContext());
+
         LinearLayoutManager lm = new LinearLayoutManager(getApplicationContext());
         lm.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecipeList.setLayoutManager(lm);
+
+        GridLayoutManager glm = new GridLayoutManager(this, spanCount);
+        glm.setOrientation(LinearLayoutManager.VERTICAL);
+
+        //check if landscape mode
+        if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE && mConstraintLayoutSmall != null) {
+            mRecipeList.setLayoutManager(glm);
+        } else {
+            mRecipeList.setLayoutManager(lm);
+        }
 
         callToRetrofit();
 
@@ -72,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("ID", recipe.getId().toString());
                     Log.v("SIZE", String.valueOf(mRecipeListResponse.size()));
                 }
+
                 mAdapter = new MyAdapter(MainActivity.this);
                 mAdapter.setDataSet(mRecipeListResponse);
                 mRecipeList.setAdapter(mAdapter);
@@ -85,6 +104,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public static int calculateNoOfColumns(Context context) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+        int scalingFactor = 200;
+        int noOfColumns = (int) (dpWidth / scalingFactor);
+        if(noOfColumns < 2)
+            noOfColumns = 2;
+        return noOfColumns;
     }
 
     public interface ApiInterface{

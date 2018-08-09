@@ -6,5 +6,8 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="no_media_available">No Media Available</string>
+    <string name="recipe">Recipe</string>
+    <string name="Ingredients">Ingredients</string>
+    <string name="Step">Step</string>
 
 </resources>

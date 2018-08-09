@@ -23,6 +23,7 @@
         <receiver android:name=".BakingWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="kitchenpal.troychuinard.com.kitchenpal.TEXT_CHANGED" />
             </intent-filter>
 
             <meta-data

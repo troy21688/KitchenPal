@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -26,8 +27,12 @@ import kitchenpal.troychuinard.com.kitchenpal.R;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private static final String RECIPE_NAME = "RECIPE_NAME";
+    private static final String PREFS = "PREFS";
     private List<Recipe> mRecipeDataSet = new ArrayList<Recipe>();
     private Context con;
+    //TODO: I am trying to save to preferences below and I believe I need a context. I am getting an error that this is null so I have commented out.
+//    private SharedPreferences mPrefs = con.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+
 
     public MyAdapter(Context context) {
         this.con = context;
@@ -59,18 +64,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, final int position) {
         String id = mRecipeDataSet.get(position).getId();
         final String recipeName = mRecipeDataSet.get(position).getName();
-        holder.mTextView.setText(id);
+        holder.mTextView.setText(recipeName);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(con, BakingWidgetProvider.class);
-                intent.setAction("UPDATE_ACTION");
-                int[] ids = AppWidgetManager.getInstance(con).getAppWidgetIds(new ComponentName(con, BakingWidgetProvider.class));
-                if (ids != null && ids.length > 0) {
-                    intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
-                    intent.putExtra(RECIPE_NAME, recipeName);
-                    con.sendBroadcast(intent);
-                }
+                //TODO: Attemping to pass Recipe Name to AppWidgetProvider
+                Intent intent = new Intent(BakingWidgetProvider.ACTION_TEXT_CHANGED);
+                intent.putExtra(RECIPE_NAME, recipeName);
+                con.sendBroadcast(intent);
+//                Intent intent = new Intent(con, BakingWidgetProvider.class);
+//                intent.setAction("UPDATE_ACTION");
+//                int[] ids = AppWidgetManager.getInstance(con).getAppWidgetIds(new ComponentName(con, BakingWidgetProvider.class));
+//                if (ids != null && ids.length > 0) {
+//                    intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+//                    intent.putExtra(RECIPE_NAME, recipeName);
+//                    con.sendBroadcast(intent);
+//                }
+                //TODO: Attempting another method of passing recipe to AppWidgetProvider
+//                SharedPreferences.Editor editor = mPrefs.edit();
+//                editor.putString(RECIPE_NAME, recipeName);
+//                editor.apply();
+
+
+                //TODO: Starting Next Activity - should I incorporate passing recipe name in this section?
                 Intent i = new Intent(con, IndividualRecipeActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("Recipe_List", (ArrayList<? extends Parcelable>) mRecipeDataSet);

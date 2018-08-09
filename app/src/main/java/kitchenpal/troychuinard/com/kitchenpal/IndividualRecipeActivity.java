@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import java.util.List;
 
@@ -31,14 +32,16 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
         mRecipeList = bundle.getParcelableArrayList("Recipe_List");
         Recipe recipe = mRecipeList.get(position);
         Log.v("NAME_TEST", recipe.getName());
+        getSupportActionBar().setTitle(recipe.getName());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null){
 
 
-            RecipeStepsFragment recipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeList, position);
+            RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
             FragmentManager fm = getSupportFragmentManager();
             fm.beginTransaction()
-                    .add(R.id.recipe_details, recipeStepsFragment)
+                    .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
                     .commit();
         }
     }
@@ -49,6 +52,17 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        //TODO: Is it alright to have methods before the call to super?
+        return super.onOptionsItemSelected(item);
 
     }
 }

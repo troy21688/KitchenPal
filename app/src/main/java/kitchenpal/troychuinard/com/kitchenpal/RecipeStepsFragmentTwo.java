@@ -111,9 +111,7 @@ public class RecipeStepsFragmentTwo extends Fragment {
             mRecipeList = bundle.getParcelableArrayList("Recipe_List");
             mPosition = bundle.getInt("Position");
         }
-        String label = mRecipeList.get(mPosition).getName();
-        mTextView = v.findViewById(R.id.label_two);
-        mTextView.setText(label);
+
         mIngredients = mRecipeList.get(mPosition).getIngredients();
         for (Ingredients ingredients : mIngredients){
             Log.v("INGREDIENTS", ingredients.getIngredient());

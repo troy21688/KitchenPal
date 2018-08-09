@@ -44,12 +44,23 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        String id = mStepsDataSet.get(position).getId();
-        holder.mTextView.setText(id);
+        if (position == 0){
+            holder.mTextView.setText(R.string.Ingredients);
+        } else {
+            //TODO: When I tried concatening with a String resource it was not displaying desired text
+            holder.mTextView.setText("Step " + String.valueOf(position - 1));
+
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RecipeStepsFragmentThree recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, position);
+                if (position == 0){
+                    RecipeStepsFragmentThree recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position));
+                } else {
+                    RecipeStepsFragmentThree recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position));
+                }
+
                 //TODO: Why am I being prompted for V4? Am I handling correctly?
                 FragmentTransaction transaction = mFragmanager.beginTransaction();
                 //TODO: Am I handling removal of previous frag correctly?
