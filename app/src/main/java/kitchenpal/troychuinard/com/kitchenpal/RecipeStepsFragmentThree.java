@@ -139,12 +139,15 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
 
         mSteps = mRecipeList.get(mPosition).getSteps();
         Steps step = mSteps.get(mStepPosition);
+
         if (mStepPosition == (mSteps.size()-1)){
             mNextArrow.setVisibility(View.INVISIBLE);
         }
+
         if (mStepPosition == 0){
             mBackArrow.setVisibility(View.INVISIBLE);
         }
+
         mStepDescription.setText(step.getDescription());
         mVideoURL = step.getVideoURL();
         mSimpleExoPlayer = v.findViewById(R.id.exoplayer);

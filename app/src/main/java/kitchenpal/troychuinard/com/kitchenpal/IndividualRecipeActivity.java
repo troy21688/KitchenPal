@@ -18,11 +18,14 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
     private Recipe mRecipe;
     private List<Recipe> mRecipeList;
 
+    private boolean mTwopane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_host);
+
+
 
         Bundle bundle = getIntent().getExtras();
 
@@ -34,6 +37,18 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
         Log.v("NAME_TEST", recipe.getName());
         getSupportActionBar().setTitle(recipe.getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //TODO: Trying to set up two-pane display and confused what else I would do here
+//        if (findViewById(R.id.two_pane_constraint_layout) != null){
+//            mTwopane = true;
+//            RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
+//            FragmentManager fm = getSupportFragmentManager();
+//            fm.beginTransaction()
+//                    .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
+//                    .commit();
+//        } else {
+//            mTwopane = false;
+//        }
 
         if (savedInstanceState == null){
 
