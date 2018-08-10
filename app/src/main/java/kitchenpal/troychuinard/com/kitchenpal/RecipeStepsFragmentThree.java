@@ -5,12 +5,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -65,6 +68,8 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     private String mVideoURL;
     private List<Steps> mSteps;
     private FrameLayout mExoPlayerPlaceholder;
+    private FragmentManager mFragManager;
+    private FragmentTransaction mTransaction;
 
 
     private OnFragmentInteractionListener mListener;
@@ -121,6 +126,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
             mStepPosition = bundle.getInt("Step_Position", 0);
         }
 
+        mFragManager = getFragmentManager();
+        mTransaction = mFragManager.beginTransaction();
+
         mStepDescription = v.findViewById(R.id.ingredient_description);
 
         mNextArrow = v.findViewById(R.id.next_arrow);
@@ -133,6 +141,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         Steps step = mSteps.get(mStepPosition);
         if (mStepPosition == (mSteps.size()-1)){
             mNextArrow.setVisibility(View.INVISIBLE);
+        }
+        if (mStepPosition == 0){
+            mBackArrow.setVisibility(View.INVISIBLE);
         }
         mStepDescription.setText(step.getDescription());
         mVideoURL = step.getVideoURL();
@@ -206,8 +217,30 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()){
             case (R.id.next_arrow):
+                if (mStepPosition < mSteps.size()) {
+                    RecipeStepsFragmentThree recipeStepsFragmentThree;
+                    recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mPosition, mStepPosition + 1);
+                    //TODO: Why am I being prompted for V4? Am I handling correctly?
+
+                    //TODO: Am I handling removal of previous frag correctly?
+                    RecipeStepsFragmentThree recipeStepsFragmentThreeOld = (RecipeStepsFragmentThree) mFragManager.findFragmentById(R.id.recipe_details_three);
+                    mTransaction.remove(recipeStepsFragmentThreeOld);
+                    mTransaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
+                    mTransaction.commit();
+                } else {
+                    Toast.makeText(getContext(),getResources().getString(R.string.final_step),Toast.LENGTH_LONG).show();
+                }
             break;
             case (R.id.back_arrow):
+                RecipeStepsFragmentThree recipeStepsFragmentThree;
+                recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mPosition, mStepPosition - 1);
+                //TODO: Why am I being prompted for V4? Am I handling correctly?
+
+                //TODO: Am I handling removal of previous frag correctly?
+                RecipeStepsFragmentThree recipeStepsFragmentThreeOld = (RecipeStepsFragmentThree) mFragManager.findFragmentById(R.id.recipe_details_three);
+                mTransaction.remove(recipeStepsFragmentThreeOld);
+                mTransaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
+                mTransaction.commit();
             break;
         }
     }
