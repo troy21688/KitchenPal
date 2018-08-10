@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -43,13 +45,16 @@ import kitchenpal.troychuinard.com.kitchenpal.Model.Steps;
  * Use the {@link RecipeStepsFragmentThree#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecipeStepsFragmentThree extends Fragment {
+public class RecipeStepsFragmentThree extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private SimpleExoPlayerView mSimpleExoPlayer;
     private SimpleExoPlayer mExoPlayer;
+    private ImageView mNextArrow;
+    private ImageView mBackArrow;
+    private TextView mStepDescription;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,6 +65,7 @@ public class RecipeStepsFragmentThree extends Fragment {
     private String mVideoURL;
     private List<Steps> mSteps;
     private FrameLayout mExoPlayerPlaceholder;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -114,8 +120,21 @@ public class RecipeStepsFragmentThree extends Fragment {
             mPosition = bundle.getInt("Recipe_Position");
             mStepPosition = bundle.getInt("Step_Position", 0);
         }
+
+        mStepDescription = v.findViewById(R.id.ingredient_description);
+
+        mNextArrow = v.findViewById(R.id.next_arrow);
+        mNextArrow.setOnClickListener(this);
+        mBackArrow = v.findViewById(R.id.back_arrow);
+        mBackArrow.setOnClickListener(this);
+
+
         mSteps = mRecipeList.get(mPosition).getSteps();
         Steps step = mSteps.get(mStepPosition);
+        if (mStepPosition == (mSteps.size()-1)){
+            mNextArrow.setVisibility(View.INVISIBLE);
+        }
+        mStepDescription.setText(step.getDescription());
         mVideoURL = step.getVideoURL();
         mSimpleExoPlayer = v.findViewById(R.id.exoplayer);
         mExoPlayerPlaceholder = v.findViewById(R.id.exoplayer_placeholder);
@@ -181,6 +200,16 @@ public class RecipeStepsFragmentThree extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case (R.id.next_arrow):
+            break;
+            case (R.id.back_arrow):
+            break;
+        }
     }
 
     /**

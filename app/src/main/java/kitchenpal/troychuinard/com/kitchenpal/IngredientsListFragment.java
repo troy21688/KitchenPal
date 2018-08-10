@@ -8,59 +8,39 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.google.android.exoplayer2.ExoPlayerFactory;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
-import com.google.android.exoplayer2.extractor.ExtractorsFactory;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
-import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.trackselection.TrackSelection;
-import com.google.android.exoplayer2.trackselection.TrackSelector;
-import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
-import com.google.android.exoplayer2.upstream.BandwidthMeter;
-import com.google.android.exoplayer2.upstream.DataSource;
-import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
-import com.google.android.exoplayer2.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import kitchenpal.troychuinard.com.kitchenpal.Adapter.StepAdapter;
+import kitchenpal.troychuinard.com.kitchenpal.Adapter.IngredientAdapter;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Ingredients;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Steps;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link RecipeStepsFragmentTwo.OnFragmentInteractionListener} interface
+ * {@link IngredientsListFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link RecipeStepsFragmentTwo#newInstance} factory method to
+ * Use the {@link IngredientsListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecipeStepsFragmentTwo extends Fragment {
+public class IngredientsListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final String RECIPE = "RECIPE";
-    private Recipe mRecipe;
-    private TextView mTextView;
     private List<Recipe> mRecipeList;
+    private List<Ingredients> mIngredientList;
     private int mPosition;
-    private List<Ingredients> mIngredients;
+    private int mStepPosition;
     private List<Steps> mSteps;
-    private RecyclerView mStepsRecyclerView;
-    private StepAdapter mAdapter;
+    private IngredientAdapter mIngredientAdapter;
+    private RecyclerView mRecyclerView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,32 +48,32 @@ public class RecipeStepsFragmentTwo extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public RecipeStepsFragmentTwo() {
+
+    public IngredientsListFragment() {
         // Required empty public constructor
     }
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
 
-     * @return A new instance of fragment RecipeStepsFragmentTwo.
+     * @return A new instance of fragment IngredientsListFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RecipeStepsFragmentTwo newInstance(List<Recipe> recipeList, int position) {
-        RecipeStepsFragmentTwo fragment = new RecipeStepsFragmentTwo();
+    public static IngredientsListFragment newInstance(List<Recipe> recipeList, int recipePosition, int stepPosition, List<Ingredients> recipeIngredients) {
+        IngredientsListFragment fragment = new IngredientsListFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("Recipe_List", (ArrayList<? extends Parcelable>) recipeList);
-        bundle.putInt("Position", position);
+        bundle.putInt("Recipe_Position", recipePosition);
+        bundle.putInt("Step_Position", stepPosition);
+        bundle.putParcelableArrayList("Ingredient_List", (ArrayList<? extends Parcelable>) recipeIngredients);
         fragment.setArguments(bundle);
-        //TODO: Is this the correct way of passing data between the activity and the fragment?
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -103,33 +83,26 @@ public class RecipeStepsFragmentTwo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_recipe_details_two, null, false);
 
+        FragmentManager fm = getFragmentManager();
+        mIngredientAdapter = new IngredientAdapter(getContext(), fm);
+
+        View v = inflater.inflate(R.layout.fragment_ingredients_list, container,false);
+        mRecyclerView = v.findViewById(R.id.ingredients_recyclerview);
+        LinearLayoutManager lm = new LinearLayoutManager(getContext());
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(lm);
+        mRecyclerView.setAdapter(mIngredientAdapter);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             mRecipeList = bundle.getParcelableArrayList("Recipe_List");
-            mPosition = bundle.getInt("Position");
-        }
-
-        mIngredients = mRecipeList.get(mPosition).getIngredients();
-        for (Ingredients ingredients : mIngredients){
-            Log.v("INGREDIENTS", ingredients.getIngredient());
+            mPosition = bundle.getInt("Recipe_Position");
+            mStepPosition = bundle.getInt("Step_Position", 0);
+            mIngredientList = bundle.getParcelableArrayList("Ingredient_List");
         }
         mSteps = mRecipeList.get(mPosition).getSteps();
-
-        mStepsRecyclerView = v.findViewById(R.id.recycler_view_recipe_steps);
-        LinearLayoutManager lm = new LinearLayoutManager(getContext());
-        lm.setOrientation(LinearLayoutManager.VERTICAL);
-        mStepsRecyclerView.setLayoutManager(lm);
-        FragmentManager fm = getFragmentManager();
-        mAdapter = new StepAdapter(getActivity().getApplicationContext(),fm);
-        mAdapter.setDataSet(mSteps, mRecipeList, mIngredients, mPosition);
-        mStepsRecyclerView.setAdapter(mAdapter);
-
-
-
-
+        Steps step = mSteps.get(mStepPosition);
+        mIngredientAdapter.setDataSet(mSteps,mRecipeList,mPosition,mIngredientList);
         return v;
     }
 
@@ -156,7 +129,6 @@ public class RecipeStepsFragmentTwo extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
 
     /**
      * This interface must be implemented by activities that contain this

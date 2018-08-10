@@ -2,7 +2,6 @@ package kitchenpal.troychuinard.com.kitchenpal.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
@@ -15,20 +14,23 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import kitchenpal.troychuinard.com.kitchenpal.IngredientsListFragment;
+import kitchenpal.troychuinard.com.kitchenpal.Model.Ingredients;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Steps;
 import kitchenpal.troychuinard.com.kitchenpal.R;
-import kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragment;
 import kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragmentThree;
 import kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragmentTwo;
 
 public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
 
     private List<Steps> mStepsDataSet = new ArrayList<Steps>();
+    private List<Ingredients> mIngredientsDataSet = new ArrayList<>();
     private List<Recipe> mRecipeList;
     private Context con;
     private int mRecipePosition;
     private FragmentManager mFragmanager;
+
 
     public StepAdapter(Context context, FragmentManager fm) {
         this.con = context;
@@ -54,20 +56,27 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RecipeStepsFragmentThree recipeStepsFragmentThree;
+                FragmentTransaction transaction = mFragmanager.beginTransaction();
                 if (position == 0){
-                    recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position));
+                    IngredientsListFragment ingredientsListFragment = IngredientsListFragment.newInstance(mRecipeList, mRecipePosition, position, mIngredientsDataSet);
+                    RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
+                    transaction.remove(recipeStepsFragmentTwo);
+                    transaction.replace(R.id.ingredients_list, ingredientsListFragment);
+                    transaction.commit();
+
                 } else {
+                    RecipeStepsFragmentThree recipeStepsFragmentThree;
                     recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mRecipePosition, (position -1));
+                    //TODO: Why am I being prompted for V4? Am I handling correctly?
+
+                    //TODO: Am I handling removal of previous frag correctly?
+                    RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
+                    transaction.remove(recipeStepsFragmentTwo);
+                    transaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
+                    transaction.commit();
                 }
 
-                //TODO: Why am I being prompted for V4? Am I handling correctly?
-                FragmentTransaction transaction = mFragmanager.beginTransaction();
-                //TODO: Am I handling removal of previous frag correctly?
-                RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
-                transaction.remove(recipeStepsFragmentTwo);
-                transaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
-                transaction.commit();
+
             }
         });
     }
@@ -90,10 +99,11 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
         }
     }
 
-    public void setDataSet(List<Steps> stepsList, List<Recipe> recipeList, int recipePosition){
+    public void setDataSet(List<Steps> stepsList, List<Recipe> recipeList, List<Ingredients> ingredientsList, int recipePosition){
         mStepsDataSet = stepsList;
         mRecipeList = recipeList;
         mRecipePosition = recipePosition;
+        mIngredientsDataSet = ingredientsList;
     }
 
 
