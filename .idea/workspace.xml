@@ -10,11 +10,11 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="INGRE" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61203eeb-92a4-4edc-9127-3446dc214c6e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/recipe_host.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
@@ -23,11 +23,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IndividualRecipeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IndividualRecipeActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,85 +55,108 @@
       <file leaf-file-name="IngredientsListFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IngredientsListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
+            <state relative-caret-position="1290">
               <caret line="104" column="82" lean-forward="false" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipeStepsFragmentThree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java">
+      <file leaf-file-name="fragment_recipe_details_two.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_two.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipe_host.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/recipe_host.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExampleInstrumentedTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/ExampleInstrumentedTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StepAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/StepAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="61" column="80" lean-forward="false" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="89" column="49" lean-forward="false" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8910#8955#0" expanded="true" />
+                <element signature="e#4427#4428#0" expanded="true" />
+                <element signature="e#4471#4472#0" expanded="true" />
+                <element signature="e#4526#4527#0" expanded="true" />
+                <element signature="e#4569#4570#0" expanded="true" />
+                <element signature="e#4616#4617#0" expanded="true" />
+                <element signature="e#4653#4654#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_recipe_details_three.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_three.xml">
+      <file leaf-file-name="BakingWidgetProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-78">
-              <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="236">
+              <caret line="36" column="113" lean-forward="false" selection-start-line="36" selection-start-column="113" selection-end-line="36" selection-end-column="113" />
+              <folding>
+                <element signature="e#1489#1531#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="baking_widget_provider.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_recipe_details_two.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_two.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="390">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe_host.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/recipe_host.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/MainActivity.java">
+      <file leaf-file-name="IngredientAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/IngredientAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+            <state relative-caret-position="515">
+              <caret line="119" column="56" lean-forward="false" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_recipe_details_one.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_one.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -145,32 +167,6 @@
               <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recipe_host.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recipe_host.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="18" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="30" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -2235,11 +2231,8 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/exoplayer_placeholder_border.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/exoplayer_placeholder_border.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recipe_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/MainActivity.java" />
@@ -2259,10 +2252,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/fragment_recipe_details_two.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IndividualRecipeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/recipe_host.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1280" />
     <option name="y" value="-234" />
     <option name="width" value="1920" />
@@ -2300,6 +2296,145 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Production">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="build/generated/source" type="cbb8eebc:String" user="build/generated/source" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="kitchenpal/troychuinard/com/kitchenpal" type="cbb8eebc:String" user="kitchenpal/troychuinard/com/kitchenpal" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="res" type="cbb8eebc:String" user="res" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="res" type="cbb8eebc:String" user="res" />
+              <item name="xml" type="cbb8eebc:String" user="xml" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="kitchenpal/troychuinard/com/kitchenpal" type="cbb8eebc:String" user="kitchenpal/troychuinard/com/kitchenpal" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="kitchenpal/troychuinard/com/kitchenpal" type="cbb8eebc:String" user="kitchenpal/troychuinard/com/kitchenpal" />
+              <item name="Adapter" type="cbb8eebc:String" user="Adapter" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="res" type="cbb8eebc:String" user="res" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="res" type="cbb8eebc:String" user="res" />
+              <item name="layout" type="cbb8eebc:String" user="layout" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="KitchenPal" type="cbb8eebc:String" user="KitchenPal" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="KitchenPal" type="cbb8eebc:String" user="KitchenPal" />
+              <item name="KitchenPal" type="cbb8eebc:String" user="KitchenPal" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2476,145 +2611,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Production">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="build/generated/source" type="cbb8eebc:String" user="build/generated/source" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="kitchenpal/troychuinard/com/kitchenpal" type="cbb8eebc:String" user="kitchenpal/troychuinard/com/kitchenpal" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-              <item name="xml" type="cbb8eebc:String" user="xml" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="kitchenpal/troychuinard/com/kitchenpal" type="cbb8eebc:String" user="kitchenpal/troychuinard/com/kitchenpal" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="kitchenpal/troychuinard/com/kitchenpal" type="cbb8eebc:String" user="kitchenpal/troychuinard/com/kitchenpal" />
-              <item name="Adapter" type="cbb8eebc:String" user="Adapter" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="res" type="cbb8eebc:String" user="res" />
-              <item name="layout" type="cbb8eebc:String" user="layout" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="KitchenPal" type="cbb8eebc:String" user="KitchenPal" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="KitchenPal" type="cbb8eebc:String" user="KitchenPal" />
-              <item name="KitchenPal" type="cbb8eebc:String" user="KitchenPal" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -2624,7 +2620,7 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="device.picker.selection" value="192.168.57.101:5555" />
+    <property name="device.picker.selection" value="ZY223BR6SX" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -2884,7 +2880,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-234" width="1920" height="1080" extended-state="0" />
+    <frame x="1280" y="-211" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2894,11 +2890,11 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28267047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19715448" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20660277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2962,14 +2958,14 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recipe_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -3013,7 +3009,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="19" column="68" lean-forward="false" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
-          <folding />
+          <folding>
+            <element signature="e#4427#4428#0" expanded="true" />
+            <element signature="e#4471#4472#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
+            <element signature="e#4569#4570#0" expanded="true" />
+            <element signature="e#4616#4617#0" expanded="true" />
+            <element signature="e#4653#4654#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3061,14 +3064,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/step_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/kitchenpal/troychuinard/com/kitchenpal/R.java">
@@ -3104,20 +3107,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/ExampleInstrumentedTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="36" />
+        <state relative-caret-position="375">
+          <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
           <folding />
         </state>
       </provider>
@@ -3130,29 +3125,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="167" lean-forward="false" selection-start-line="19" selection-start-column="167" selection-end-line="19" selection-end-column="167" />
           <folding />
         </state>
       </provider>
@@ -3166,14 +3142,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recipe_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
@@ -3216,23 +3192,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="66" column="43" lean-forward="false" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ingredients_list.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/arrow_previous_icon_128.png">
@@ -3246,25 +3214,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ingredient_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="54" column="29" lean-forward="false" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/IngredientAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="119" column="56" lean-forward="false" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5073#5074#0" expanded="false" />
-            <element signature="e#5115#5116#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3276,72 +3232,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/StepAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="61" column="80" lean-forward="false" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="1560">
           <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8910#8955#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_three.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
+        <state relative-caret-position="765">
           <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_one.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_one.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recipe_host.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recipe_host.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="18" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="30" selection-end-column="18" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="375">
           <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
           <folding />
         </state>
@@ -3349,21 +3296,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IngredientsListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
+        <state relative-caret-position="1290">
           <caret line="104" column="82" lean-forward="false" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_two.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="315">
           <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/IndividualRecipeActivity.java">
@@ -3375,14 +3322,74 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/recipe_host.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/ExampleInstrumentedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/IngredientAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="119" column="56" lean-forward="false" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/StepAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="61" column="80" lean-forward="false" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="89" column="49" lean-forward="false" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
+          <folding>
+            <element signature="e#4427#4428#0" expanded="true" />
+            <element signature="e#4471#4472#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
+            <element signature="e#4569#4570#0" expanded="true" />
+            <element signature="e#4616#4617#0" expanded="true" />
+            <element signature="e#4653#4654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/BakingWidgetProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="36" column="113" lean-forward="false" selection-start-line="36" selection-start-column="113" selection-end-line="36" selection-end-column="113" />
+          <folding>
+            <element signature="e#1489#1531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/baking_widget_provider.xml">
+      <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
