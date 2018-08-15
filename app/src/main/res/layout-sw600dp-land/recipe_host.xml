@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/two_pane_constraint-layout"
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/recipe_details_two"
-        app:layout_constraintEnd_toStartOf="@id/guideline10"
         android:layout_width="0dp"
+        android:layout_weight=".4"
         android:layout_height="match_parent">
 
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/recipe_details_three"
-        app:layout_constraintStart_toEndOf="@id/guideline10"
         android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent">
     </FrameLayout>
-
-    <android.support.constraint.Guideline
-        app:layout_constraintGuide_percent=".4"
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-         />
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

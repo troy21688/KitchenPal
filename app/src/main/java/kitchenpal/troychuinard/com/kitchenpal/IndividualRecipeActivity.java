@@ -46,17 +46,22 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
 
             RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
             FragmentManager fm = getSupportFragmentManager();
-            fm.beginTransaction()
-                    .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
-                    .commit();
 
-            if (findViewById(R.id.two_pane_constraint_layout) != null && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            if (findViewById(R.id.two_pane_constraint_layout) != null) {
                 mTwopane = true;
                 BlankFragment blankFragment = new BlankFragment();
                 fm.beginTransaction()
+                        .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
                         .add(R.id.recipe_details_three, blankFragment)
                         .commit();
+            } else {
+                fm.beginTransaction()
+                        .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
+                        .commit();
             }
+
+            } else {
+            
         }
 
         //TODO: Trying to set up two-pane display and confused what else I would do here
