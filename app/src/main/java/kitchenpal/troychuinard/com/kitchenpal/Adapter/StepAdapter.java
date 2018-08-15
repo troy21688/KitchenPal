@@ -60,6 +60,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
                 if (position == 0){
                     IngredientsListFragment ingredientsListFragment = IngredientsListFragment.newInstance(mRecipeList, mRecipePosition, position, mIngredientsDataSet);
                     RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
+
                     transaction.remove(recipeStepsFragmentTwo);
                     transaction.replace(R.id.ingredients_list, ingredientsListFragment);
                     transaction.commit();

@@ -27,7 +27,6 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
         setContentView(R.layout.recipe_host);
 
 
-
         Bundle bundle = getIntent().getExtras();
 
         Intent intent = getIntent();
@@ -40,13 +39,13 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
 
 
             RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
             FragmentManager fm = getSupportFragmentManager();
 
+            //two-pane
             if (findViewById(R.id.two_pane_constraint_layout) != null) {
                 mTwopane = true;
                 BlankFragment blankFragment = new BlankFragment();
@@ -60,15 +59,11 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
                         .commit();
             }
 
-            } else {
-            
         }
-
-        //TODO: Trying to set up two-pane display and confused what else I would do here
 
     }
 
-    public Recipe getRecipe(){
+    public Recipe getRecipe() {
         return mRecipe;
     }
 
@@ -80,7 +75,7 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
             finish();
         }
         //TODO: Is it alright to have methods before the call to super?
