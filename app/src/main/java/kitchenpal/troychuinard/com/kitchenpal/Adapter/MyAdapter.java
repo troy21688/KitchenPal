@@ -73,28 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: Attemping to pass Recipe Name to AppWidgetProvider
-//                Intent intent = new Intent(BakingWidgetProvider.ACTION_TEXT_CHANGED);
-//                intent.putExtra(RECIPE_NAME, recipeName);
-//                con.sendBroadcast(intent);
-//                Intent intent = new Intent(con, BakingWidgetProvider.class);
-//                intent.setAction("UPDATE_ACTION");
-//                int[] ids = AppWidgetManager.getInstance(con).getAppWidgetIds(new ComponentName(con, BakingWidgetProvider.class));
-//                if (ids != null && ids.length > 0) {
-//                    intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
-//                    intent.putExtra(RECIPE_NAME, recipeName);
-//                    con.sendBroadcast(intent);
-//                }
-                //TODO: Attempting another method of passing recipe to AppWidgetProvider
-                SharedPreferences.Editor editor = mPrefs.edit();
-                for (Ingredients ingredients : ingredients){
-                    editor.putString(ingredients.getIngredient(), ingredients.getIngredient());
-                    editor.putString(ingredients.getIngredient(), ingredients.getMeasure());
-                    editor.putString(ingredients.getIngredient(), ingredients.getQuantity());
-                }
-//                editor.putString(INGREDIENTS, ingredients);
-                editor.putString(RECIPE_NAME, recipeName);
-                editor.apply();
+
 
 
                 //TODO: Starting Next Activity - should I incorporate passing recipe name in this section?

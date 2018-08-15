@@ -14,7 +14,7 @@ import java.util.List;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
 
 
-public class IndividualRecipeActivity extends AppCompatActivity implements RecipeStepsFragment.OnFragmentInteractionListener, RecipeStepsFragmentTwo.OnFragmentInteractionListener, RecipeStepsFragmentThree.OnFragmentInteractionListener, IngredientsListFragment.OnFragmentInteractionListener {
+public class IndividualRecipeActivity extends AppCompatActivity implements RecipeStepsFragment.OnFragmentInteractionListener, RecipeStepsFragmentTwo.OnFragmentInteractionListener, RecipeStepsFragmentThree.OnFragmentInteractionListener, IngredientsListFragment.OnFragmentInteractionListener, BlankFragment.OnFragmentInteractionListener {
 
     private Recipe mRecipe;
     private List<Recipe> mRecipeList;
@@ -39,18 +39,7 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
         getSupportActionBar().setTitle(recipe.getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //TODO: Trying to set up two-pane display and confused what else I would do here
-        if (findViewById(R.id.two_pane_constraint_layout) != null && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            mTwopane = true;
-            RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
-            FragmentManager fm = getSupportFragmentManager();
-            fm.beginTransaction()
-                    .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
-                    .commit();
 
-        } else {
-            mTwopane = false;
-        }
 
         if (savedInstanceState == null){
 
@@ -60,7 +49,18 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
             fm.beginTransaction()
                     .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
                     .commit();
+
+            if (findViewById(R.id.two_pane_constraint_layout) != null && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mTwopane = true;
+                BlankFragment blankFragment = new BlankFragment();
+                fm.beginTransaction()
+                        .add(R.id.recipe_details_three, blankFragment)
+                        .commit();
+            }
         }
+
+        //TODO: Trying to set up two-pane display and confused what else I would do here
+
     }
 
     public Recipe getRecipe(){

@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/two_pane_constraint-layout"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <fragment
-        android:name="kitchenpal.troychuinard.com.kitchenpal.RecipeStepsFragmentTwo"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"/>
 
     <FrameLayout
         android:id="@+id/recipe_details_two"
-        android:layout_width="match_parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline10"
+        android:layout_width="0dp"
         android:layout_height="match_parent">
+
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/recipe_details_three"
-        android:layout_width="match_parent"
+        app:layout_constraintStart_toEndOf="@id/guideline10"
+        android:layout_width="0dp"
         android:layout_height="match_parent">
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/ingredients_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+    <android.support.constraint.Guideline
+        app:layout_constraintGuide_percent=".4"
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         />
+
 
 </android.support.constraint.ConstraintLayout>
