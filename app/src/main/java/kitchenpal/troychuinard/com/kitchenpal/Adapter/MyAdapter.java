@@ -87,7 +87,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //                }
                 //TODO: Attempting another method of passing recipe to AppWidgetProvider
                 SharedPreferences.Editor editor = mPrefs.edit();
-                editor.putString(INGREDINTS, String.valueOf(ingredients));
+                for (Ingredients ingredients : ingredients){
+                    editor.putString(ingredients.getIngredient(), ingredients.getIngredient());
+                    editor.putString(ingredients.getIngredient(), ingredients.getMeasure());
+                    editor.putString(ingredients.getIngredient(), ingredients.getQuantity());
+                }
                 editor.putString(RECIPE_NAME, recipeName);
                 editor.apply();
 
