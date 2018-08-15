@@ -1,6 +1,7 @@
 package kitchenpal.troychuinard.com.kitchenpal;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,16 +40,17 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //TODO: Trying to set up two-pane display and confused what else I would do here
-//        if (findViewById(R.id.two_pane_constraint_layout) != null){
-//            mTwopane = true;
-//            RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
-//            FragmentManager fm = getSupportFragmentManager();
-//            fm.beginTransaction()
-//                    .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
-//                    .commit();
-//        } else {
-//            mTwopane = false;
-//        }
+        if (findViewById(R.id.two_pane_constraint_layout) != null && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            mTwopane = true;
+            RecipeStepsFragmentTwo recipeStepsFragmentTwo = RecipeStepsFragmentTwo.newInstance(mRecipeList, position);
+            FragmentManager fm = getSupportFragmentManager();
+            fm.beginTransaction()
+                    .add(R.id.recipe_details_two, recipeStepsFragmentTwo)
+                    .commit();
+
+        } else {
+            mTwopane = false;
+        }
 
         if (savedInstanceState == null){
 

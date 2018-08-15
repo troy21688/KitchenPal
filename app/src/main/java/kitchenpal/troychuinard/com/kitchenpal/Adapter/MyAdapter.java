@@ -92,6 +92,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     editor.putString(ingredients.getIngredient(), ingredients.getMeasure());
                     editor.putString(ingredients.getIngredient(), ingredients.getQuantity());
                 }
+//                editor.putString(INGREDIENTS, ingredients);
                 editor.putString(RECIPE_NAME, recipeName);
                 editor.apply();
 

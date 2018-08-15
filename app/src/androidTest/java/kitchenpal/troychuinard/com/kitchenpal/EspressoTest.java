@@ -14,6 +14,8 @@ import org.junit.runner.RunWith;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
+import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
@@ -31,7 +33,8 @@ public class EspressoTest {
 
     @Test
     public void testRecyclerViewText(){
-        Espresso.onView(ViewMatchers.withId(R.id.recycler_view_ingredients)).check(matches(hasDescendant(withText("Nutella Pie"))));
+        Espresso.onView(ViewMatchers.withId(R.id.recycler_view_ingredients)).perform(RecyclerViewActions.scrollToPosition(0));
+        Espresso.onView(withText("Nutella Pie")).check(matches(isDisplayed()));
     }
 
 }
