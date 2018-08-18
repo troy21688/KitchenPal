@@ -16,14 +16,15 @@
     <list default="true" id="61203eeb-92a4-4edc-9127-3446dc214c6e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java" afterPath="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -196,22 +197,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="75" column="34" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecipeStepsFragmentThree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RecipeStepsFragmentThree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
               <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="e#9694#9739#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EspressoTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -239,6 +244,7 @@
       <find>on</find>
       <find>onSave</find>
       <find>onPause</find>
+      <find>prep</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2300,7 +2306,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Model/MyWidgetRemoveViewsFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Model/MyWidgetRemoteViewsFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/blank_frag.xml" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Adapter/MyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/Model/SimpleIdlingResource.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/MainActivity.java" />
@@ -2316,6 +2321,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_details_three.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentThree.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java" />
       </list>
     </option>
   </component>
@@ -2627,7 +2633,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android Instrumented Tests.EspressoTest">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -2843,9 +2849,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EspressoTest - 2018.08.15 at 07h 17m 04s.xml">
-      <configuration name="EspressoTest" configurationId="AndroidTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="EspressoTest - 2018.08.15 at 07h 18m 18s.xml">
       <configuration name="EspressoTest" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
@@ -2873,6 +2876,9 @@
     <history-entry file="EspressoTest - 2018.08.17 at 21h 45m 11s.xml">
       <configuration name="EspressoTest" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="EspressoTest - 2018.08.18 at 13h 33m 29s.xml">
+      <configuration name="EspressoTest" configurationId="AndroidTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2896,8 +2902,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3035144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32012194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23678862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32012194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23678862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20223577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3185,13 +3191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kitchenpal/troychuinard/com/kitchenpal/RecipeStepsFragmentTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
@@ -3353,7 +3352,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#9694#9739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/kitchenpal/troychuinard/com/kitchenpal/EspressoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
