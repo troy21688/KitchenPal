@@ -10,5 +10,6 @@
     <string name="Ingredients">Ingredients</string>
     <string name="Step">Step</string>
     <string name="final_step">You have reached the final step.</string>
+    <string name="select_step">Please select a step to view.</string>
 
 </resources>

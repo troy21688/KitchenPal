@@ -31,6 +31,7 @@ public class EspressoTest {
         Espresso.onView(ViewMatchers.withId(R.id.recycler_view_ingredients)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
     }
 
+    //TODO: This test is not passing on my device, but it is passing on an emulator. I am not sure why, but have read about idling resources. Can you confirm how to handle?
     @Test
     public void testRecyclerViewText(){
         Espresso.onView(ViewMatchers.withId(R.id.recycler_view_ingredients)).perform(RecyclerViewActions.scrollToPosition(0));

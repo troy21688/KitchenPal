@@ -3,6 +3,9 @@ package kitchenpal.troychuinard.com.kitchenpal;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Movie;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private MyAdapter mAdapter;
     ConstraintLayout mConstraintLayoutSmall;
 
+
+
+
     //testing
 
     @Override
@@ -47,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         mRecipeList = findViewById(R.id.recycler_view_ingredients);
         mConstraintLayoutSmall = findViewById(R.id.small_layout);
         int spanCount = calculateNoOfColumns(getApplicationContext());
+
+
 
         LinearLayoutManager lm = new LinearLayoutManager(getApplicationContext());
         lm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -63,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         callToRetrofit();
 
+
     }
 
     private void callToRetrofit() {
@@ -72,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
                 .Builder()
                 .addInterceptor(interceptor)
                 .build();
+
+
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -120,4 +132,6 @@ public class MainActivity extends AppCompatActivity {
         @GET("topher/2017/May/59121517_baking/baking.json")
         Call<List<Recipe>> getRecipe();
     }
+
+
 }

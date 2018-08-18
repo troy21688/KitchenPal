@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
@@ -53,6 +56,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String SELECTED_POSITION = "SELECTED_POSITION";
     private SimpleExoPlayerView mSimpleExoPlayer;
     private SimpleExoPlayer mExoPlayer;
     private ImageView mNextArrow;
@@ -70,6 +74,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     private FrameLayout mExoPlayerPlaceholder;
     private FragmentManager mFragManager;
     private FragmentTransaction mTransaction;
+    private Long mPlayerPosition;
 
 
     private OnFragmentInteractionListener mListener;
@@ -101,23 +106,45 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     @Override
     public void onStart() {
         super.onStart();
-        initializePlayer();
+        if (mVideoURL != null) {
+            initializePlayer();
+        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (mExoPlayer!=null) {
+        if (mExoPlayer != null) {
+            mPlayerPosition = mExoPlayer.getCurrentPosition();
+            mExoPlayer.stop();
             mExoPlayer.release();
             mExoPlayer = null;
         }
     }
 
     @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+//        if (savedInstanceState != null) {
+//            mPlayerPosition = savedInstanceState.getLong(SELECTED_POSITION);
+//            mExoPlayer.seekTo(mPlayerPosition);
+//        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+//        if (outState != null) {
+//            mPlayerPosition = mExoPlayer.getCurrentPosition();
+//            outState.putLong(SELECTED_POSITION, mPlayerPosition);
+//        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_recipe_details_three, container,false);
+        View v = inflater.inflate(R.layout.fragment_recipe_details_three, container, false);
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
@@ -128,6 +155,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
 
         mFragManager = getFragmentManager();
         mTransaction = mFragManager.beginTransaction();
+
 
         mStepDescription = v.findViewById(R.id.ingredient_description);
 
@@ -140,11 +168,11 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         mSteps = mRecipeList.get(mPosition).getSteps();
         Steps step = mSteps.get(mStepPosition);
 
-        if (mStepPosition == (mSteps.size()-1)){
+        if (mStepPosition == (mSteps.size() - 1)) {
             mNextArrow.setVisibility(View.INVISIBLE);
         }
 
-        if (mStepPosition == 0){
+        if (mStepPosition == 0) {
             mBackArrow.setVisibility(View.INVISIBLE);
         }
 
@@ -152,7 +180,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         mVideoURL = step.getVideoURL();
         mSimpleExoPlayer = v.findViewById(R.id.exoplayer);
         mExoPlayerPlaceholder = v.findViewById(R.id.exoplayer_placeholder);
-        if (mVideoURL == null || mVideoURL.isEmpty()){
+        if (mVideoURL == null || mVideoURL.isEmpty()) {
             mSimpleExoPlayer.setVisibility(View.GONE);
             mExoPlayerPlaceholder.setVisibility(View.VISIBLE);
         }
@@ -179,8 +207,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         }
     }
 
-    private void initializePlayer(){
+    private void initializePlayer() {
         // Create a default TrackSelector
+
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
         TrackSelection.Factory videoTrackSelectionFactory =
                 new AdaptiveTrackSelection.Factory(bandwidthMeter);
@@ -200,13 +229,13 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
 
 
-
         // This is the MediaSource representing the media to be played.
         Uri videoUri = Uri.parse(mVideoURL);
         MediaSource videoSource = new ExtractorMediaSource(videoUri,
                 dataSourceFactory, extractorsFactory, null, null);
 
         // Prepare the player with the source.
+        Bundle bundle = new Bundle();
         mExoPlayer.prepare(videoSource);
     }
 
@@ -218,7 +247,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case (R.id.next_arrow):
                 if (mStepPosition < mSteps.size()) {
                     RecipeStepsFragmentThree recipeStepsFragmentThree;
@@ -231,9 +260,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
                     mTransaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
                     mTransaction.commit();
                 } else {
-                    Toast.makeText(getContext(),getResources().getString(R.string.final_step),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), getResources().getString(R.string.final_step), Toast.LENGTH_LONG).show();
                 }
-            break;
+                break;
             case (R.id.back_arrow):
                 RecipeStepsFragmentThree recipeStepsFragmentThree;
                 recipeStepsFragmentThree = RecipeStepsFragmentThree.newInstance(mRecipeList, mPosition, mStepPosition - 1);
@@ -244,7 +273,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
                 mTransaction.remove(recipeStepsFragmentThreeOld);
                 mTransaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
                 mTransaction.commit();
-            break;
+                break;
         }
     }
 

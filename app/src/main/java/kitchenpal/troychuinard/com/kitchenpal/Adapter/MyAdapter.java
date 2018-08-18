@@ -1,7 +1,5 @@
 package kitchenpal.troychuinard.com.kitchenpal.Adapter;
 
-import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,7 +16,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import kitchenpal.troychuinard.com.kitchenpal.BakingWidgetProvider;
 import kitchenpal.troychuinard.com.kitchenpal.IndividualRecipeActivity;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Ingredients;
 import kitchenpal.troychuinard.com.kitchenpal.Model.Recipe;
@@ -29,7 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private static final String RECIPE_NAME = "RECIPE_NAME";
     private static final String PREFS = "PREFS";
-    private static final String INGREDINTS = "INGREDIENTS";
+    private static final String INGREDIENTS = "INGREDIENTS";
     private List<Recipe> mRecipeDataSet = new ArrayList<Recipe>();
     private Context con;
     //TODO: I am trying to save to preferences below and I believe I need a context. I am getting an error that this is null so I have commented out.
@@ -73,6 +70,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences.Editor editor = mPrefs.edit();
+                editor.putString(INGREDIENTS, String.valueOf(ingredients));
+                editor.putString(RECIPE_NAME, recipeName);
+                editor.apply();
+
 
 
 

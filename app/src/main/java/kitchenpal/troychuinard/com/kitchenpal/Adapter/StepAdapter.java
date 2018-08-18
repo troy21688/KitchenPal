@@ -59,10 +59,10 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
                 FragmentTransaction transaction = mFragmanager.beginTransaction();
                 if (position == 0){
                     IngredientsListFragment ingredientsListFragment = IngredientsListFragment.newInstance(mRecipeList, mRecipePosition, position, mIngredientsDataSet);
-                    RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
-
-                    transaction.remove(recipeStepsFragmentTwo);
-                    transaction.replace(R.id.ingredients_list, ingredientsListFragment);
+//                    RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
+//
+//                    transaction.remove(recipeStepsFragmentTwo);
+                    transaction.add(R.id.recipe_details_three, ingredientsListFragment);
                     transaction.commit();
 
                 } else {
@@ -71,9 +71,9 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.ViewHolder> {
                     //TODO: Why am I being prompted for V4? Am I handling correctly?
 
                     //TODO: Am I handling removal of previous frag correctly?
-                    RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
-                    transaction.remove(recipeStepsFragmentTwo);
-                    transaction.replace(R.id.recipe_details_three, recipeStepsFragmentThree);
+//                    RecipeStepsFragmentTwo recipeStepsFragmentTwo = (RecipeStepsFragmentTwo) mFragmanager.findFragmentById(R.id.recipe_details_two);
+//                    transaction.remove(recipeStepsFragmentTwo);
+                    transaction.add(R.id.recipe_details_three, recipeStepsFragmentThree);
                     transaction.commit();
                 }
 
