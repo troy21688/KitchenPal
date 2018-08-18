@@ -79,15 +79,14 @@ public class IndividualRecipeActivity extends AppCompatActivity implements Recip
             mPosition = savedInstanceState.getInt(RECIPE_POSITION);
             FragmentManager z = getSupportFragmentManager();
             //check if fragment was clicked, if so no longer necessary to show blank
-            RecipeStepsFragmentThree recipeStepsFragmentThree = (RecipeStepsFragmentThree) z.findFragmentById(R.id.recipe_details_three);
-            if (recipeStepsFragmentThree != null){
+            Fragment x = z.findFragmentById(R.id.recipe_details_three);
+            if (x != null & x instanceof RecipeStepsFragmentThree  ) {
                 return;
             }
-            BlankFragment blankFragment = (BlankFragment) z.findFragmentById(R.id.recipe_details_three);
-            if (blankFragment != null & getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-                z.beginTransaction().remove(blankFragment).commit();
+            if (x != null & getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                z.beginTransaction().remove(x).commit();
             }
-            if (blankFragment == null & getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            if (x == null & getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 BlankFragment newLandscapeFrag = new BlankFragment();
                 z.beginTransaction().add(R.id.recipe_details_three, newLandscapeFrag).commit();
             }
