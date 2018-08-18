@@ -97,6 +97,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null){
+            mPlayerPosition = savedInstanceState.getLong(SELECTED_POSITION);
+        }
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -115,29 +118,16 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     public void onPause() {
         super.onPause();
         if (mExoPlayer != null) {
-            mPlayerPosition = mExoPlayer.getCurrentPosition();
-            mExoPlayer.stop();
             mExoPlayer.release();
-            mExoPlayer = null;
         }
-    }
-
-    @Override
-    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-        super.onViewStateRestored(savedInstanceState);
-//        if (savedInstanceState != null) {
-//            mPlayerPosition = savedInstanceState.getLong(SELECTED_POSITION);
-//            mExoPlayer.seekTo(mPlayerPosition);
-//        }
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-//        if (outState != null) {
-//            mPlayerPosition = mExoPlayer.getCurrentPosition();
-//            outState.putLong(SELECTED_POSITION, mPlayerPosition);
-//        }
+            mPlayerPosition = mExoPlayer.getCurrentPosition();
+            outState.putLong(SELECTED_POSITION, mPlayerPosition);
+
     }
 
     @Override
@@ -237,6 +227,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         // Prepare the player with the source.
         Bundle bundle = new Bundle();
         mExoPlayer.prepare(videoSource);
+        if (mPlayerPosition != null){
+            mExoPlayer.seekTo(mPlayerPosition);
+        }
     }
 
     @Override
