@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
@@ -34,8 +35,7 @@ public class EspressoTest {
     //TODO: This test is not passing on my device, but it is passing on an emulator. I am not sure why, but have read about idling resources. Can you confirm how to handle?
     @Test
     public void testRecyclerViewText(){
-        Espresso.onView(ViewMatchers.withId(R.id.recycler_view_ingredients)).perform(RecyclerViewActions.scrollToPosition(0));
-        Espresso.onView(withText("Nutella Pie")).check(matches(isDisplayed()));
+        Espresso.onView(ViewMatchers.withId(R.id.recycler_view_ingredients)).perform(RecyclerViewActions.actionOnItem(hasDescendant(withText("Nutella Pie")), scrollTo()));
     }
 
 }

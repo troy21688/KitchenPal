@@ -57,6 +57,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String SELECTED_POSITION = "SELECTED_POSITION";
+    private static final String PLAYER_STATE = "PLAYER_STATE";
     private SimpleExoPlayerView mSimpleExoPlayer;
     private SimpleExoPlayer mExoPlayer;
     private ImageView mNextArrow;
@@ -75,6 +76,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     private FragmentManager mFragManager;
     private FragmentTransaction mTransaction;
     private Long mPlayerPosition;
+    private boolean mIsPlayWhenReady;
 
 
     private OnFragmentInteractionListener mListener;
@@ -99,11 +101,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null){
             mPlayerPosition = savedInstanceState.getLong(SELECTED_POSITION);
+            mIsPlayWhenReady = savedInstanceState.getBoolean(PLAYER_STATE);
         }
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -126,7 +126,9 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
             mPlayerPosition = mExoPlayer.getCurrentPosition();
+            mIsPlayWhenReady = mExoPlayer.getPlayWhenReady();
             outState.putLong(SELECTED_POSITION, mPlayerPosition);
+            outState.putBoolean(PLAYER_STATE, mIsPlayWhenReady);
 
     }
 
@@ -229,6 +231,7 @@ public class RecipeStepsFragmentThree extends Fragment implements View.OnClickLi
         mExoPlayer.prepare(videoSource);
         if (mPlayerPosition != null){
             mExoPlayer.seekTo(mPlayerPosition);
+            mExoPlayer.setPlayWhenReady(mIsPlayWhenReady);
         }
     }
 
